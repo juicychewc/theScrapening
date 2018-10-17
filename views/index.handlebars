@@ -1,18 +1,28 @@
 <div class="container-fluid">
-    {{#each cosplay}}
-    <article>
-        <div class="imageDiv">
+    <ul class="collection">
+        {{#each cosplay}}
+        <li class="collection-item avatar">
             <a href='{{this.link}} target="blank"'>
-                <img src="{{this.img}}">
-            </a>
-        </div>
-        <div class="articleText">
-            <a href='{{this.link}} target="blank"'>
-                <h1>{{this.title}}</h1>
+                {{!-- <img src="{{this.img}}" alt="cosplay sample" class="circle"> --}}
+                <img src="" alt="cosplay sample" class="circle">
+                <span class="title">{{this.title}}</span>
                 <p>{{this.snippet}}</p>
             </a>
+        </li>
+        {{!-- <article>
+            <div class="imageDiv">
+                <a href='{{this.link}} target="blank"'>
+                    <img src="{{this.img}}">
+                </a>
+            </div>
+            <div class="articleText">
+                <a href='{{this.link}} target="blank"'>
+                    <h1>{{this.title}}</h1>
+                    <p>{{this.snippet}}</p>
+                </a>
 
-        </div>
-    </article>
-    {{/each}}
+            </div>
+        </article> --}}
+        {{/each}}
+    </ul>
 </div>

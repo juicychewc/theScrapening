@@ -1,6 +1,7 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 const db = require("../models");
+var fs = require("fs");
 
 module.exports = function (app) {
 
@@ -45,10 +46,10 @@ module.exports = function (app) {
                     .find("p")
                     .text();
 
-                console.log(result.title)
-                console.log(result.link)
-                console.log(result.imgUrl)
-                console.log(result.snippet)
+                // console.log(result.title)
+                // console.log(result.link)
+                // console.log(result.imgUrl)
+                // console.log(result.snippet)
 
                 // Create a new Article using the `result` object built from scraping
                 db.Article.create(result)
@@ -63,7 +64,8 @@ module.exports = function (app) {
             });
 
             // If we were able to successfully scrape and save an Article, send a message to the client
-            res.send("Scrape Complete");
+            // res.send("Scrape Complete");
+            res.redirect("/");
         });
     });
 
